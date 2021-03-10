@@ -21,7 +21,7 @@
   "main": "dist/htmx.min.js",
   "unpkg": "dist/htmx.min.js",
   "scripts": {
-    "test": "mocha-chrome test/index.html",
+    "test": "mocha-chrome --chrome-flags '[\"--no-sandbox\"]' test/index.html",
     "dist": "cp -r src/* dist/ && npm run-script uglify && gzip -k -f dist/htmx.min.js > dist/htmx.min.js.gz && exit",
     "www": "node scripts/www.js",
     "uglify": "uglifyjs -m eval -o dist/htmx.min.js dist/htmx.js"
